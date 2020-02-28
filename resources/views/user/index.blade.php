@@ -111,7 +111,7 @@
         <div class="modal-body">
             <div class="card card-primary">
                 <!-- form start -->
-                <form role="form" method="POST" action="{{ url('user/create') }}">
+                <form role="form" method="POST" action="{{ route('user.store') }}">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -133,7 +133,7 @@
                         </div>
                         <div class="form-group">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" placeholder="Enter username" name="username" value="{{ old('nip') }}">
+                                <input type="text" class="form-control" placeholder="Enter username" name="username" value="{{ old('username') }}">
                             </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
