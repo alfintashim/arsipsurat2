@@ -49,7 +49,7 @@
     @yield('header')
     <!-- /.content-header -->
 
-    {{-- @include('sweetalert::alert') --}}
+    @include('sweetalert::alert')
     {{-- @include('vendor.sweetalert.alert') --}}
 
     <!-- Main content -->
