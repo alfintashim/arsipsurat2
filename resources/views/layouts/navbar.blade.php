@@ -27,7 +27,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
 
-      {{-- <li class="nav-item dropdown">
+      <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-stream"></i>
         </a>
@@ -67,7 +67,7 @@
               </div>
           @endif
         </div>
-      </li> --}}
+      </li>
       
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">
