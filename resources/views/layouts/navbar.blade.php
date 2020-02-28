@@ -27,10 +27,9 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
 
-      <li class="nav-item dropdown">
+      {{-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="fas fa-stream"></i>
-          {{-- <span class="badge badge-danger navbar-badge">3</span> --}}
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           @if(count(LogSurat::log()) > 0)
@@ -56,9 +55,9 @@
                 </div>
                 <!-- Message End -->
               </div>
-              <div class="dropdown-divider"></div>
-              @endforeach
-            @else
+            <div class="dropdown-divider"></div>
+            @endforeach
+          @else
               <div class="dropdown-item">
                 <div class="media">
                   <div class="media-body">
@@ -66,9 +65,9 @@
                   </div>
                 </div>
               </div>
-            @endif
+          @endif
         </div>
-      </li>
+      </li> --}}
       
       <!-- Notifications Dropdown Menu -->
       <li class="nav-item dropdown">

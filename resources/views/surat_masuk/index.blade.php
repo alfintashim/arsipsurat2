@@ -6,14 +6,14 @@
 
 @section('css')
     <!-- daterange picker -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/daterangepicker/daterangepicker.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/daterangepicker/daterangepicker.css')}}">
 
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/select2/css/select2.min.css')}}">
-    <link rel="stylesheet" href="{{asset('backend/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
 
     <!-- DataTables -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css')}}">
 @endsection
 
 @section('header')
@@ -204,21 +204,21 @@
 
 @section('script')
 <!-- DataTables -->
-<script src="{{asset('backend/plugins/datatables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('backend/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('assets/plugins/datatables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js')}}"></script>
 
 <!-- Select2 -->
-<script src="{{asset('backend/plugins/select2/js/select2.full.min.js')}}"></script>
+<script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
 
 <!-- InputMask -->
-<script src="{{asset('backend/plugins/moment/moment.min.js')}}"></script>
-<script src="{{asset('backend/plugins/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
+<script src="{{asset('assets/plugins/moment/moment.min.js')}}"></script>
+<script src="{{asset('assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js')}}"></script>
 
 <!-- date-range-picker -->
-<script src="{{asset('backend/plugins/daterangepicker/daterangepicker.js')}}"></script>
+<script src="{{asset('assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
 
 <!-- bs-custom-file-input -->
-<script src="{{asset('backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+<script src="{{asset('assets/plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
 
 <script type="text/javascript">
     $(document).ready(function () {
