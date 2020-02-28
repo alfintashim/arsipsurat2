@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-success elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link navbar-success">
+    <a href="{{ url('/')}}" class="brand-link navbar-success">
      {{ logo_profil() }}
       <span class="brand-text font-weight-light">Aplikasi Arsip</span>
     </a>
@@ -28,6 +28,7 @@
               with font-awesome or any other icon font library -->
 
           <!--START-->
+          @if(auth()->user()->id_role == 1 || auth()->user()->id_role == 2)
 
           <li class="nav-item">
             <a href="{{ url('/')}}" class="nav-link @if(url('/') == request()->url() ) active @else '' @endif">
@@ -119,6 +120,7 @@
                   <p>Kode Nomor Surat</p>
                 </a>
               </li>
+              @if(auth()->user()->id_role == 1)
               <li class="nav-item">
                 <a href="{{ route('role.index') }}" class="nav-link {{ (request()->is('role*')) ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
@@ -131,8 +133,11 @@
                   <p>User</p>
                 </a>
               </li>
+              @endif
             </ul>
           </li>
+
+          @endif
 
           {{-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

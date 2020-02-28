@@ -13,35 +13,38 @@
 
 Auth::routes();
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth', 'web', 'roles'])->group(function(){
+    Route::group(['roles'=>'Super Admin'],function(){
+        Route::group(['roles'=>'Admin'],function(){
+            Route::get('/', 'HomeController@index')->name('home');
 
-    Route::get('/', 'HomeController@index')->name('home');
+            Route::resource('tsm', 'SuratMasukController');
+            Route::get('tsm/{id}/file', 'SuratMasukController@file')->name('tsm.file');
+            
+            Route::resource('tsk', 'SuratKeluarController');
+            Route::get('tsk/{id}/file', 'SuratKeluarController@file')->name('tsk.file');
 
-    Route::resource('user', 'UserController');
-    Route::put('user/{id}/role', 'UserController@update_role');
+            Route::prefix('/lsm')->name('lsm.')->group(function() {
+                Route::get('/', 'LaporanController@index_lsm')->name('index');
+                Route::get('/download', 'LaporanController@download_lsm')->name('download');
+            });
+            
+            Route::prefix('/lsk')->name('lsk.')->group(function() {
+                Route::get('/', 'LaporanController@index_lsk')->name('index');
+                Route::get('/download', 'LaporanController@download_lsk')->name('download');
+            });
+            
+            Route::resource('profil', 'InstansiController');
+            
+            Route::resource('kns', 'KodeNomorSuratController');
+            
+            Route::get('password', 'PasswordController@change')->name('password.change');
+            Route::put('password', 'PasswordController@update')->name('password.update');
+        });
 
-    Route::resource('role', 'RoleController');
+        Route::resource('user', 'UserController');
+        Route::put('user/{id}/role', 'UserController@update_role');
 
-    Route::resource('tsm', 'SuratMasukController');
-    Route::get('tsm/{id}/file', 'SuratMasukController@file')->name('tsm.file');
-
-    Route::resource('tsk', 'SuratKeluarController');
-    Route::get('tsk/{id}/file', 'SuratKeluarController@file')->name('tsk.file');
-
-    Route::prefix('/lsm')->name('lsm.')->group(function() {
-        Route::get('/', 'LaporanController@index_lsm')->name('index');
-        Route::get('/download', 'LaporanController@download_lsm')->name('download');
+        Route::resource('role', 'RoleController');
     });
-
-    Route::prefix('/lsk')->name('lsk.')->group(function() {
-        Route::get('/', 'LaporanController@index_lsk')->name('index');
-        Route::get('/download', 'LaporanController@download_lsk')->name('download');
-    });
-
-    Route::resource('profil', 'InstansiController');
-
-    Route::resource('kns', 'KodeNomorSuratController');
-
-    Route::get('password', 'PasswordController@change')->name('password.change');
-    Route::put('password', 'PasswordController@update')->name('password.update');
 });
